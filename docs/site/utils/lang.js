@@ -4,11 +4,11 @@ import enUS from '../../../src/locale/lang/en-US';
 
 const langMap = {
   'en-US': {
-    title: 'Vant - Mobile UI Components built on Vue',
+    title: 'VantBussiness - Bussiness Mobile UI Components built on vant',
     messages: enUS
   },
   'zh-CN': {
-    title: 'Vant - 轻量、可靠的移动端 Vue 组件库',
+    title: 'VantBussiness 基于Vant的业务组件',
     messages: zhCN
   }
 };
@@ -17,7 +17,9 @@ let currentLang = '';
 
 function getDefaultLang() {
   const langs = Object.keys(langMap);
-  const { hash } = location;
+  const {
+    hash
+  } = location;
 
   for (let i = 0; i < langs.length; i++) {
     if (hash.indexOf(langs[i]) !== -1) {

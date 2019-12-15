@@ -16,7 +16,7 @@ export default {
     header: {
       logo: {
         image: 'https://b.yzcdn.cn/vant/logo-white.png',
-        title: 'Vant',
+        title: 'VanBussiness',
         href: '#/'
       },
       nav: {
@@ -89,11 +89,15 @@ export default {
         groups: [
           {
             groupName: '业务组件',
-            icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
+            icon: 'orders-o',
             list: [
               {
-                path: '/de',
-                title: 'De'
+                path: '/session-title',
+                title: '标题'
+              },
+              {
+                path: '/test-component',
+                title: 'test-component'
               }
             ]
           }
@@ -105,7 +109,7 @@ export default {
     header: {
       logo: {
         image: 'https://b.yzcdn.cn/vant/logo-white.png',
-        title: 'Vant',
+        title: 'VanBussiness',
         href: '#/'
       },
       nav: {
@@ -142,12 +146,16 @@ export default {
         groups: [
           {
             groupName: 'Bussiness Components',
-            icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
+            icon: 'orders-o',
             list: [
               {
-                path: '/de',
-                title: 'De'
-              }
+                path: '/session-title',
+                title: 'session-title'
+              },
+              {
+                path: '/test-component',
+                title: 'test-component'
+              },
             ]
           }
         ]

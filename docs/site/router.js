@@ -3,6 +3,22 @@ import docConfig from './doc.config';
 import DemoList from './components/DemoList';
 import { demoWrapper } from './mobile/demo-common';
 import { initIframeRouter } from './utils/iframe-router';
+import {
+  NavBar,
+  Collapse,
+  CollapseItem,
+  Icon,
+  Cell,
+  CellGroup
+} from 'vant';
+
+Vue
+  .use(NavBar)
+  .use(Collapse)
+  .use(CollapseItem)
+  .use(Icon)
+  .use(Cell)
+  .use(CellGroup)
 
 initIframeRouter();
 

@@ -3,7 +3,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from '../router';
 import App from './App';
-import { importAll } from '../utils';
+import {
+  importAll
+} from '../utils';
 import '@vant/touch-emulator';
 
 const componentMap = {};
@@ -14,9 +16,15 @@ console.log('mobile entry');
 
 const router = new VueRouter({
   mode: 'hash',
-  routes: routes({ mobile: true, componentMap }),
+  routes: routes({
+    mobile: true,
+    componentMap
+  }),
   scrollBehavior(to, from, savedPosition) {
-    return savedPosition || { x: 0, y: 0 };
+    return savedPosition || {
+      x: 0,
+      y: 0
+    };
   }
 });
 

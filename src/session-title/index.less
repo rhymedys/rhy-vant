@@ -1,0 +1,65 @@
+@import '../style/var';
+
+
+@vantbussiness-session-title-padding-right: 15px;
+
+
+.vantbussiness-session-title {
+    background: white;
+    font-size: @font-size-md;
+    padding: 10px @vantbussiness-session-title-padding-right;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__left {
+        flex: 1;
+        overflow: hidden;
+    }
+
+    &__title {
+
+        &--small {
+            font-size: @font-size-sm ;
+        }
+
+        &--large {
+            font-size: @font-size-lg ;
+        }
+
+
+        &--bold {
+            font-weight: bolder;
+        }
+    }
+
+
+    &__desc {
+
+        &--small {
+            font-size: @font-size-sm ;
+        }
+
+        &--large {
+            font-size: @font-size-lg ;
+        }
+
+
+        &--bold {
+            font-weight: bolder;
+        }
+    }
+
+    &__more {
+        vertical-align: middle;
+        max-width: 78px;
+
+        &--absolute {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: @vantbussiness-session-title-padding-right ;
+        }
+    }
+}

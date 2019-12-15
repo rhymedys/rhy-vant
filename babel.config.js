@@ -22,6 +22,7 @@ module.exports = function (api) {
       '@babel/preset-typescript'
     ],
     plugins: [
+
       [
         '@babel/plugin-transform-runtime',
         {
@@ -31,8 +32,14 @@ module.exports = function (api) {
           useESModules
         }
       ],
+
       '@babel/plugin-transform-object-assign',
-      '@babel/plugin-proposal-optional-chaining'
+      '@babel/plugin-proposal-optional-chaining',
+      ['babel-plugin-import', {
+        libraryName: 'vant',
+        libraryDirectory: 'es',
+        style: true
+      }, 'vant']
     ]
   };
 };

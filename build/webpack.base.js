@@ -1,28 +1,27 @@
 const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
+const {
+  VueLoaderPlugin
+} = require('vue-loader');
 
 module.exports = {
   mode: 'development',
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.vue', '.less']
+    extensions: ['.js','.jsx','.ts', '.tsx', '.vue', '.less']
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                preserveWhitespace: false
-              }
+        use: [{
+          loader: 'vue-loader',
+          options: {
+            compilerOptions: {
+              preserveWhitespace: false
             }
           }
-        ]
+        }]
       },
       {
-        test: /\.(js|ts|tsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -33,7 +32,7 @@ module.exports = {
         }
       },
       {
-        test: /\.less$/,
+        test: /\.(le|c)ss$/,
         sideEffects: true,
         use: [
           'style-loader',

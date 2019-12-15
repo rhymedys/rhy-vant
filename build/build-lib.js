@@ -7,7 +7,7 @@ const signale = require('signale');
 const { Signale } = signale;
 const tasks = [
   'npm run bootstrap',
-  'npm run lint',
+  // 'npm run lint',
   'npm run build:entry',
   'node build/build-components.js',
   'node build/build-style.js',
