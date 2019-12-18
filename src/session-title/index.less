@@ -7,7 +7,6 @@
 .vantbussiness-session-title {
     background: white;
     font-size: @font-size-md;
-    padding: 10px @vantbussiness-session-title-padding-right;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -16,6 +15,10 @@
     &__left {
         flex: 1;
         overflow: hidden;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right:  @vantbussiness-session-title-padding-right;
+        margin-left:  @vantbussiness-session-title-padding-right;
     }
 
     &__title {
@@ -52,6 +55,7 @@
     }
 
     &__more {
+        margin-right:  @vantbussiness-session-title-padding-right;
         vertical-align: middle;
         max-width: 78px;
 

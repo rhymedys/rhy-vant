@@ -1,6 +1,6 @@
 {
-  "name": "@rhy/vant-bussiness",
-  "version": "0.1.0",
+  "name": "rhy-vant-bus",
+  "version": "0.1.0-beta.1",
   "description": "Bussiness Mobile UI Components built on vant",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -25,12 +25,6 @@
     "test:coverage": "open test/coverage/index.html",
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant commit-lint"
-    }
   },
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [

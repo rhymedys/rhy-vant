@@ -63,6 +63,7 @@ export default {
     :desc="basicUsage.desc"
     :more="basicUsage.more"
     :txt-align="basicUsage.txtAlign"
+    @on-more-click="onMoreClick"
   />
 ```
 
@@ -81,10 +82,21 @@ export default {
           txt: 'desc'
         },
         more: {
+          visiable:true,
           txt: 'more',
-          link: 'https://www.baidu.com'
+          event:'custom',
+          eventParam: 'https://www.baidu.com'
         }
       }
+    }
+  },
+  methods:{
+    onMoreClick({
+      event,
+      eventParam
+    }){
+      console.log(event,eventParam)
+      // custom,https://www.baidu.com
     }
   }
 };
@@ -113,9 +125,12 @@ export default {
 
 
 
+
 ### MoreConfig Data Structure
 
-| key  | Description  | Type     |
-| ---- | ------------ | -------- |
-| txt  | More content | *string* |
-| link | URL          | *string* |
+| key        | Description                 | Type                    |
+| ---------- | --------------------------- | ----------------------- |
+| txt        | More content                | *string*                |
+| visiable   | Visiable                    | *boolean*               |
+| event      | Event of clicking component | *string*                |
+| eventParam | Event's  Params             | *string   \| undefiend* |

@@ -36,26 +36,18 @@ export default createComponent({
         return
       }
 
-      const {
-        link
-      } = more
-
       let {
         event,
-        eventParam = {},
+        eventParam,
       } = more
 
-
-
-      if (link) {
-        window.location.href = link
-        return
-      }
 
 
       if (!event) {
         return
       }
+
+
 
 
       this.$emit('on-more-click', {
@@ -72,24 +64,29 @@ export default createComponent({
       title,
       desc,
       more,
-      txtAlign
+      txtAlign,
+      background
     } = this
 
 
 
-    const isHadTitle = title && title.txt
     const isHadDesc = desc && desc.txt
 
 
 
-    if (!isHadTitle && !isHadDesc) {
-      return null
+    // if (!isHadTitle && !isHadDesc) {
+    //   return ''
+    // }
+
+
+    const leftStyle = {}
+    const wrapperStyle = {}
+    if (txtAlign === 'middle') {
+      leftStyle.textAlign = 'center'
     }
 
-
-    const style = {}
-    if (txtAlign === 'middle') {
-      style.textAlign = 'center'
+    if (background) {
+      wrapperStyle.background = background
     }
 
 
@@ -159,7 +156,11 @@ export default createComponent({
 
     const generateMoreDom = () => {
 
-      if (more && txtAlign !== 'right') {
+      if (
+        more &&
+        more.visiable &&
+        txtAlign !== 'right'
+      ) {
         const {
           txt = '更多',
         } = more
@@ -182,8 +183,11 @@ export default createComponent({
         class={
           bem()
         }
+        style={
+          wrapperStyle
+        }
       >
-        <div class={bem('left')} style={style}>
+        <div class={bem('left')} style={leftStyle}>
           {
             generateTitleDom()
           }

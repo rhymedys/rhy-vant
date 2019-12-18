@@ -12,6 +12,7 @@
         :desc="basicUsage.desc"
         :more="basicUsage.more"
         :txt-align="basicUsage.txtAlign"
+        @on-more-click="onMoreClick"
       />
     </demo-block>
   </demo-section>
@@ -33,7 +34,7 @@ export default {
     return {
       basicUsage: {
         background: 'white',
-        txtAlign:'middle',
+        txtAlign: 'middle',
         title: {
           weight: 'bold',
           txt: 'title',
@@ -43,11 +44,23 @@ export default {
           txt: 'desc'
         },
         more: {
+          visiable: true,
           txt: 'more',
-          link: 'https://www.baidu.com'
+          event: 'custom',
+          eventParam: 'https://www.baidu.com'
         }
       }
     };
+  },
+  methods: {
+    onMoreClick({ event, eventParam }) {
+      console.log(event, eventParam);
+      // custom,https://www.baidu.com
+
+      if (event === 'custom') {
+        window.location.href = eventParam;
+      }
+    }
   }
 };
 </script>

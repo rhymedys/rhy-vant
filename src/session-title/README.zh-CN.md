@@ -65,6 +65,7 @@ export default {
     :desc="basicUsage.desc"
     :more="basicUsage.more"
     :txt-align="basicUsage.txtAlign"
+    @on-more-click="onMoreClick"
   />
 ```
 
@@ -83,10 +84,21 @@ export default {
           txt: 'desc'
         },
         more: {
+          visiable:true,
           txt: 'more',
-          link: 'https://www.baidu.com'
+          event:'custom',
+          eventParam: 'https://www.baidu.com'
         }
       }
+    }
+  },
+  methods:{
+    onMoreClick({
+      event,
+      eventParam
+    }){
+      console.log(event,eventParam)
+      // custom,https://www.baidu.com
     }
   }
 };
@@ -114,7 +126,9 @@ export default {
 
 ### MoreConfig Data Structure
 
-| key  | Description | Type     |
-| ---- | ----------- | -------- |
-| txt  | 显示文本    | *string* |
-| link | 超链接      | *string* |
+| key        | Description    | Type                |
+| ---------- | -------------- | ------------------- |
+| txt        | 更多文本内容   | *string*            |
+| visiable   | 可见           | *boolean*           |
+| event      | 自定义点击事件 | *string*            |
+| eventParam | 点击事件参数   | *string\|undefiend* |

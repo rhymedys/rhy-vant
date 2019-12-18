@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-const version = '0.1.0';
+const version = '0.1.0-beta.1';
 const components = [
   SessionTitle,
   TestComponent
