@@ -2,6 +2,7 @@
 import { VueConstructor } from 'vue/types';
 import Lazyload from './lazyload';
 import Locale from './locale';
+import MagicCube from './magic-cube';
 import SessionTitle from './session-title';
 import TestComponent from './test-component';
 
@@ -13,6 +14,7 @@ declare global {
 
 const version = '0.1.0-beta.1';
 const components = [
+  MagicCube,
   SessionTitle,
   TestComponent
 ];
@@ -33,6 +35,7 @@ export {
   version,
   Lazyload,
   Locale,
+  MagicCube,
   SessionTitle,
   TestComponent
 };

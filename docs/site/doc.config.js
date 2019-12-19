@@ -96,6 +96,10 @@ export default {
                 title: '标题'
               },
               {
+                path: '/magic-cube',
+                title: '魔方'
+              },
+              {
                 path: '/test-component',
                 title: 'test-component'
               }
@@ -151,6 +155,10 @@ export default {
               {
                 path: '/session-title',
                 title: 'session-title'
+              },
+              {
+                path: '/magic-cube',
+                title: 'magic-cube'
               },
               {
                 path: '/test-component',
