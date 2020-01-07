@@ -29,4 +29,5 @@ export type FunctionComponent<Props = DefaultProps, PropDefs = PropsDefinition<P
   props?: PropDefs;
   model?: ModelOptions;
   inject?: InjectOptions;
+  isArtManager?: boolean
 };

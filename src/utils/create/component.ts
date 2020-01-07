@@ -10,6 +10,7 @@ import { DefaultProps, FunctionComponent } from '../types';
 export interface VantComponentOptions extends ComponentOptions<Vue> {
   functional?: boolean;
   install?: (Vue: VueConstructor) => void;
+  isArtManager?: boolean
 }
 
 export type TsxBaseProps<Slots> = {
@@ -22,7 +23,8 @@ export type TsxBaseProps<Slots> = {
 };
 
 export type TsxComponent<Props, Events, Slots> = (
-  props: Partial<Props & Events & TsxBaseProps<Slots>>
+  props: Partial<Props & Events & TsxBaseProps<Slots>>,
+
 ) => VNode;
 
 function install(this: ComponentOptions<Vue>, Vue: VueConstructor) {
@@ -52,12 +54,13 @@ function transformFunctionComponent(pure: FunctionComponent): VantComponentOptio
     functional: true,
     props: pure.props,
     model: pure.model,
+    isArtManager: false,
     render: (h, context): any => pure(h, context.props, unifySlots(context), context)
   };
 }
 
 export function createComponent(name: string) {
-  return function<Props = DefaultProps, Events = {}, Slots = {}> (
+  return function <Props = DefaultProps, Events = {}, Slots = {}>(
     sfc: VantComponentOptions | FunctionComponent
   ): TsxComponent<Props, Events, Slots> {
     if (typeof sfc === 'function') {
@@ -69,6 +72,7 @@ export function createComponent(name: string) {
       sfc.mixins.push(SlotsMixin);
     }
 
+    sfc.isArtManager = false
     sfc.name = name;
     sfc.install = install;
 
